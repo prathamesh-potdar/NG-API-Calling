@@ -1,0 +1,44 @@
+<div>
+    <input type="number" name="num" [(ngModel)]="num">&nbsp;
+
+    <button (click)="getData()" class="btn btn-primary">Get Data</button>
+    &nbsp; &nbsp;
+    <button (click)="getAllData()" class="btn btn-primary">Get All Data</button>
+    <br>
+
+</div>
+<br>
+
+<div *ngIf="show"  class="table">
+    <table class="styled-table">
+        <tr>
+            <th >Id</th>
+            <th >Title</th>
+            <th >body</th>
+        </tr>
+        <tr >
+            <td >{{data.id}}</td>
+            <td >{{data.title}}</td>
+            <td >{{data.body}}</td>
+
+        </tr>
+
+    </table>
+</div>
+<div *ngIf="show"  class="table">
+    <table class="styled-table" *ngIf="dataArray && dataArray.length > 0;">
+        <tr>
+            <th >Id</th>
+            <th >Title</th>
+            <th >body</th>
+        </tr>
+        <tr *ngFor="let item of dataArray">
+            <td >{{item.id}}</td>
+            <td >{{item.title}}</td>
+            <td >{{item.body}}</td>
+
+        </tr>
+
+    </table>
+</div>
+
